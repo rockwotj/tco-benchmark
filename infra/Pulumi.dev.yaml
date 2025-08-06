@@ -1,0 +1,3 @@
+encryptionsalt: v1:yIzCABOdGMY=:v1:sg1tYE8rSPTbQ0zN:YSkv6I4+gQ/F/qAjYIZCQMFNQeOUBw==
+config:
+  tco-benchmark:k8sNamespace: redpanda

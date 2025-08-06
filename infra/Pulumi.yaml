@@ -1,0 +1,3 @@
+name: tco-benchmark
+description: Deploy redpanda to a local k3s cluster
+runtime: go
