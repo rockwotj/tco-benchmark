@@ -1,0 +1,20 @@
+input:
+  generate:
+    interval: 1s
+    mapping: |
+      let first_name = fake("first_name")
+      let last_name  = fake("last_name")
+      root.user_id   = counter()
+      root.name      = $first_name + " " + $last_name
+      root.email     = ($first_name.slice(0,1) + $last_name + "@" + fake("domain_name")).lowercase()
+      root.ip        = fake("ipv4")
+      root.login_time = now()
+
+output:
+  redpanda:
+    topic: users
+    seed_brokers:
+      - "${REDPANDA_BROKERS}"
+    tls:
+      enabled: true
+      root_cas: "${REDPANDA_CA}"
